@@ -21,7 +21,7 @@ namespace CalculadoraTabajara.ConsoleApp
                 Console.WriteLine("Calculadora Tabajara\n");
 
                 Console.WriteLine("Tela Principal\n");
-
+                Console.WriteLine("Digite 2 para realizar subtração");
                 Console.WriteLine("Digite S para sair\n");
 
                 Console.Write("Opção: ");
@@ -40,10 +40,10 @@ namespace CalculadoraTabajara.ConsoleApp
 
                 string operacao = "";
 
-                switch (opcao)
+                if (opcao == "2")
                 {
-                    default:
-                        break;
+                    operacao = "Subtração";
+
                 }
 
                 string subtitulo = $"Novo calculo de {operacao}";
@@ -60,6 +60,10 @@ namespace CalculadoraTabajara.ConsoleApp
 
                 switch (opcao)
                 {
+                    case "2":
+                        resultado = primeiroNumero - segundoNumero;
+                        break;
+
                     default:
                         break;
                 }
