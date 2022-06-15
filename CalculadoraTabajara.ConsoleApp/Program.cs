@@ -25,6 +25,7 @@ namespace CalculadoraTabajara.ConsoleApp
                 Console.WriteLine("Digite 1 para realizar adição\n");
                 Console.WriteLine("Digite 2 para realizar subtração\n");
                 Console.WriteLine("Digite 3 para realizar multiplicação\n");
+                Console.WriteLine("Digite 4 para realizar divisão\n");
                 Console.WriteLine("Digite S para sair\n");
 
                 Console.Write("Opção: ");
@@ -40,6 +41,8 @@ namespace CalculadoraTabajara.ConsoleApp
                     operacao = "Subtração";
                 else if (opcao.Equals("3"))
                     operacao = "Multiplicação";
+                else if (opcao.Equals("4"))
+                    operacao = "Divisão";
 
                 #endregion
 
@@ -71,7 +74,12 @@ namespace CalculadoraTabajara.ConsoleApp
                         resultado = primeiroNumero - segundoNumero;
                         break;
 
-                    case "3": resultado = primeiroNumero * segundoNumero; 
+                    case "3": 
+                        resultado = primeiroNumero * segundoNumero; 
+                        break;
+
+                    case "4":
+                        resultado = primeiroNumero / segundoNumero;
                         break;
                   
                     default:
