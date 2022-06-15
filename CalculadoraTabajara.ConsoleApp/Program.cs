@@ -24,6 +24,8 @@ namespace CalculadoraTabajara.ConsoleApp
 
                 Console.WriteLine("Digite S para sair\n");
 
+                Console.WriteLine("Digite 3 para multiplicar\n");
+
                 Console.Write("Opção: ");
                 opcao = Console.ReadLine();
 
@@ -42,8 +44,11 @@ namespace CalculadoraTabajara.ConsoleApp
 
                 switch (opcao)
                 {
+                    case "3": operacao = "Multiplicação";break;
+                    
                     default:
                         break;
+                    
                 }
 
                 string subtitulo = $"Novo calculo de {operacao}";
@@ -60,6 +65,8 @@ namespace CalculadoraTabajara.ConsoleApp
 
                 switch (opcao)
                 {
+                    case "3": resultado = primeiroNumero * segundoNumero; break;
+                  
                     default:
                         break;
                 }
