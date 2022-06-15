@@ -27,7 +27,12 @@ namespace CalculadoraTabajara.ConsoleApp
 
                 Console.WriteLine("Tela Principal\n");
 
+                Console.WriteLine("Digite 1 para realizar adição\n");
+                Console.WriteLine("Digite 2 para realizar subtração\n");
+                Console.WriteLine("Digite 3 para realizar multiplicação\n");
+                Console.WriteLine("Digite 4 para realizar divisão\n");
                 Console.WriteLine("Digite S para sair\n");
+
 
                 Console.WriteLine("Digite H para ver o histórico\n");
 
@@ -36,8 +41,18 @@ namespace CalculadoraTabajara.ConsoleApp
                 Console.Write("Opção: ");
                 opcao = Console.ReadLine();
 
+                string operacao = "";
+
                 if (opcao.Equals("s", StringComparison.OrdinalIgnoreCase))
                     break;
+                else if (opcao.Equals("1"))
+                    operacao = "Adição";
+                else if (opcao.Equals("2"))
+                    operacao = "Subtração";
+                else if (opcao.Equals("3"))
+                    operacao = "Multiplicação";
+                else if (opcao.Equals("4"))
+                    operacao = "Divisão";
 
                 else if (opcao.Equals("h", StringComparison.OrdinalIgnoreCase))
                 {   
@@ -53,17 +68,6 @@ namespace CalculadoraTabajara.ConsoleApp
 
                 Console.WriteLine("Calculadora Tabajara\n");
 
-                string operacao = "";
-
-                switch (opcao)
-                {
-                    case "3": operacao = "Multiplicação";break;
-                    
-                    default:
-                        break;
-                    
-                }
-
                 string subtitulo = $"Novo calculo de {operacao}";
 
                 Console.WriteLine(subtitulo + "\n");
@@ -78,7 +82,21 @@ namespace CalculadoraTabajara.ConsoleApp
 
                 switch (opcao)
                 {
-                    case "3": resultado = primeiroNumero * segundoNumero; break;
+                    case "1":
+                        resultado = primeiroNumero + segundoNumero;
+                        break;
+
+                    case "2":
+                        resultado = primeiroNumero - segundoNumero;
+                        break;
+
+                    case "3": 
+                        resultado = primeiroNumero * segundoNumero; 
+                        break;
+
+                    case "4":
+                        resultado = primeiroNumero / segundoNumero;
+                        break;
                   
                     default:
                         break;
