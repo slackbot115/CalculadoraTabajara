@@ -11,6 +11,7 @@ namespace CalculadoraTabajara.ConsoleApp
         static void Main(string[] args)
         {
             string opcao;
+            Notificador notificador = new Notificador();
 
             while (true)
             {
@@ -29,6 +30,13 @@ namespace CalculadoraTabajara.ConsoleApp
 
                 Console.Write("Opção: ");
                 opcao = Console.ReadLine();
+
+                //Validação opções menu
+                if (opcao != "1"& opcao != "2" & opcao != "3" & opcao != "4" & opcao != "s")
+                {
+                    notificador.ApresentarMensagem("Escolha uma das opções do menu!", ConsoleColor.Red);
+                    continue;
+                }
 
                 string operacao = "";
 
@@ -54,12 +62,19 @@ namespace CalculadoraTabajara.ConsoleApp
                 Console.WriteLine(subtitulo + "\n");
 
                 Console.Write($"Digite o primeiro número: ");
-                double primeiroNumero = Convert.ToDouble(Console.ReadLine());
+                double primeiroNumero = Convert.ToDouble(Console.ReadLine());                
 
                 Console.Write($"Digite o segundo número: ");
                 double segundoNumero = Convert.ToDouble(Console.ReadLine());
 
                 double resultado = 0;
+
+                //Validação divisão por zero
+                if (opcao == "4" & segundoNumero == 0)
+                {
+                    notificador.ApresentarMensagem("Impossível dividir por zero", ConsoleColor.Red);
+                    continue;
+                }
 
                 switch (opcao)
                 {
