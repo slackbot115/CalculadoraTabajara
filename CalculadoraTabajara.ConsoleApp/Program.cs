@@ -12,6 +12,11 @@ namespace CalculadoraTabajara.ConsoleApp
         {
             string opcao;
 
+            string[] historico = new string[10];
+
+            int contHistorico = 0;
+            
+
             while (true)
             {
                 #region Menu Principal
@@ -28,6 +33,11 @@ namespace CalculadoraTabajara.ConsoleApp
                 Console.WriteLine("Digite 4 para realizar divisão\n");
                 Console.WriteLine("Digite S para sair\n");
 
+
+                Console.WriteLine("Digite H para ver o histórico\n");
+
+                Console.WriteLine("Digite 3 para multiplicar\n");
+
                 Console.Write("Opção: ");
                 opcao = Console.ReadLine();
 
@@ -43,6 +53,12 @@ namespace CalculadoraTabajara.ConsoleApp
                     operacao = "Multiplicação";
                 else if (opcao.Equals("4"))
                     operacao = "Divisão";
+
+                else if (opcao.Equals("h", StringComparison.OrdinalIgnoreCase))
+                {   
+                    foreach (string item in historico)
+                        { Console.WriteLine(item); } Console.ReadKey(); break;                        
+                }
 
                 #endregion
 
@@ -96,6 +112,9 @@ namespace CalculadoraTabajara.ConsoleApp
 
                 Console.Write($"O resultado da operação de {operacao} é: {resultado}");
 
+                historico[contHistorico] = operacao +" entre " + primeiroNumero + " e " + segundoNumero + " = " + resultado;
+                contHistorico++;
+
                 Console.WriteLine();
 
                 Console.ReadLine();
@@ -106,3 +125,17 @@ namespace CalculadoraTabajara.ConsoleApp
         }
     }
 }
+/* 
+ * ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠿⠿⠿⠿⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+ * ⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⣉⡥⠶⢶⣿⣿⣿⣿⣷⣆⠉⠛⠿⣿⣿⣿⣿⣿⣿⣿
+ * ⣿⣿⣿⣿⣿⣿⣿⡿⢡⡞⠁⠀⠀⠤⠈⠿⠿⠿⠿⣿⠀⢻⣦⡈⠻⣿⣿⣿⣿⣿
+ * ⣿⣿⣿⣿⣿⣿⣿⡇⠘⡁⠀⢀⣀⣀⣀⣈⣁⣐⡒⠢⢤⡈⠛⢿⡄⠻⣿⣿⣿⣿
+ * ⣿⣿⣿⣿⣿⣿⣿⡇⠀⢀⣼⣿⣿⣿⣿⣿⣿⣿⣿⣶⣄⠉⠐⠄⡈⢀⣿⣿⣿⣿
+ * ⣿⣿⣿⣿⣿⣿⣿⠇⢠⣿⣿⣿⣿⡿⢿⣿⣿⣿⠁⢈⣿⡄⠀⢀⣀⠸⣿⣿⣿⣿
+ * ⣿⣿⣿⣿⡿⠟⣡⣶⣶⣬⣭⣥⣴⠀⣾⣿⣿⣿⣶⣾⣿⣧⠀⣼⣿⣷⣌⡻⢿⣿
+ * ⣿⣿⠟⣋⣴⣾⣿⣿⣿⣿⣿⣿⣿⡇⢿⣿⣿⣿⣿⣿⣿⡿⢸⣿⣿⣿⣿⣷⠄⢻
+ * ⡏⠰⢾⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⢂⣭⣿⣿⣿⣿⣿⠇⠘⠛⠛⢉⣉⣠⣴⣾
+ * ⣿⣷⣦⣬⣍⣉⣉⣛⣛⣉⠉⣤⣶⣾⣿⣿⣿⣿⣿⣿⡿⢰⣿⣿⣿⣿⣿⣿⣿⣿
+ * ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⡘⣿⣿⣿⣿⣿⣿⣿⣿⡇⣼⣿⣿⣿⣿⣿⣿⣿⣿
+ * ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣇⢸⣿⣿⣿⣿⣿⣿⣿⠁⣿⣿⣿⣿⣿⣿⣿⣿⣿
+ *
